@@ -22,9 +22,18 @@ header{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 
 }
+
+#score{
+    background-color: black;
+    color:white;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
 #container{
     border: 2px;
-    display: flex;
+    /* display:flex; */
+    position:fixed;
     justify-content: center;
     align-items: center;
     width:100vw;
@@ -33,19 +42,22 @@ header{
 }
 
 #screen{
-    display:flex;
+    /* display:flex; */
     width: 1200px;
     height: 1200px;
     border: 5px solid white;
-    justify-content:center;
-    align-items: end;
+    /* justify-content:center;
+    align-items: end; */
+    position:relative;
+    
+    
 }
 
 #slider{
     width: 150px;
     height:20px;
     background-color: white;
-    position:relative;
+    position:absolute;
     bottom: 100px;
     
 }
@@ -54,4 +66,5 @@ header{
     background-color: white;
     height:30px;
     width:30px;
+    position:relative;
 }
