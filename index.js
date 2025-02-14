@@ -92,6 +92,7 @@ function ballCollision(){
     }
     if(ballBottom>=screenBottom){
         ballVelocityY*=-1;
+        scoreCount="GAME OVER";
     }
     
     if(ballLeft<=sliderRight &&
@@ -100,6 +101,9 @@ function ballCollision(){
         ballBottom>=sliderTop
 
     ){
+        if(Math.abs(sliderVelocityX)!=0){
+            ballVelocityX+=sliderVelocityX/3;
+        }
         scoreCount++;
         ballVelocityY*=-1;
     }
@@ -133,10 +137,21 @@ function mainPhysics(){
         sliderVelocityX=0;
     }
     
-    score.innerText=`Score: ${scoreCount}`;
+    scoreTrack();
     // console.log(ballX,ballY)
 }
 
 
 let physics=setInterval(mainPhysics,10)
 
+function scoreTrack(){
+    if(Number.isInteger(scoreCount)){
+        score.innerText=`Score: ${scoreCount}`;
+    }else{
+        score.innerText=`GAME OVER`
+        score.style.color="red";
+        clearInterval(physics);
+    }
+    
+    
+}

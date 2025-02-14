@@ -20,10 +20,14 @@ header{
     padding:0;
     color: white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: underline;
+    /* text-shadow: 3px 3px 1px rgb(33, 197, 0); */
 
 }
 
 #score{
+    font-family: monospace;
+    font-size: 3rem;
     background-color: black;
     color:white;
     margin:0;
