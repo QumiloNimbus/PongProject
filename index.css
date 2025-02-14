@@ -9,6 +9,9 @@ body{
     padding:0;
 }
 header{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
     margin:0;
     padding:0;
     background-color: black;
@@ -23,6 +26,21 @@ header{
     text-decoration: underline;
     /* text-shadow: 3px 3px 1px rgb(33, 197, 0); */
 
+}
+#restart{
+    width:fit-content;
+    font-family: monospace;
+    font-size: 5rem;
+    padding: 10px 20px;
+    border-radius: 0px;
+    box-shadow: 5px 5px 0px 1px white;
+    background-color: rgb(241, 100, 100);
+    border: 0px solid red;
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+    margin:50px;
+    justify-content: center;
+    display:none;
 }
 
 #score{

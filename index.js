@@ -2,6 +2,7 @@ const slider=document.getElementById("slider");
 const ball=document.getElementById("ball");
 const screen=document.getElementById("screen");
 const score=document.getElementById("score");
+const restartBtn=document.getElementById("restart");
 
 slider.style.bottom="";
 slider.style.left="";
@@ -148,10 +149,15 @@ function scoreTrack(){
     if(Number.isInteger(scoreCount)){
         score.innerText=`Score: ${scoreCount}`;
     }else{
+        restartBtn.style.display="inline";
         score.innerText=`GAME OVER`
-        score.style.color="red";
+        score.style.color="rgb(241, 100, 100)";
         clearInterval(physics);
     }
     
     
 }
+
+restartBtn.addEventListener("click",()=>{
+    location.reload();
+})
