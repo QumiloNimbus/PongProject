@@ -15,11 +15,14 @@ let screenTop=screen.offsetTop,
     screenBottom=screen.offsetTop+screen.offsetHeight;
 
 
-let ballX=100, ballY=500;
+let ballX=100, ballY=5;
 let theta=((Math.random()*101).toFixed(0)-50)*Math.PI/180;
 console.log(theta);
 
-let ballVelocity=-10, ballVelocityX,ballVelocityY;
+
+let ballVelocity=5, ballVelocityX,ballVelocityY;
+
+
 ballVelocityX=ballVelocity*Math.sin(theta);
 ballVelocityY=ballVelocity*Math.cos(theta);
 
