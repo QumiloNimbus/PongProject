@@ -19,7 +19,10 @@ let ballX=100, ballY=5;
 let theta=((Math.random()*101).toFixed(0)-50)*Math.PI/180;
 console.log(theta);
 
+
 let ballVelocity=5, ballVelocityX,ballVelocityY;
+
+
 ballVelocityX=ballVelocity*Math.sin(theta);
 ballVelocityY=ballVelocity*Math.cos(theta);
 
@@ -104,9 +107,36 @@ function ballCollision(){
     ){
         if(Math.abs(sliderVelocityX)!=0){
             ballVelocityX+=sliderVelocityX/3;
+            ballVelocityY=Math.sqrt(Math.abs(Math.pow(ballVelocity,2)-Math.pow(ballVelocityX,2)));
+            
         }
         scoreCount++;
         ballVelocityY*=-1;
+    }
+
+    if(ballTop<=sliderBottom &&
+        ballBottom>=sliderBottom &&
+        ballLeft<=sliderRight &&
+        ballRight>=sliderLeft
+    ){
+        if(Math.abs(sliderVelocityX)!=0){
+            ballVelocityX+=sliderVelocityX/3;
+            ballVelocityY=Math.sqrt(Math.abs(Math.pow(ballVelocity,2)-Math.pow(ballVelocityX,2)));
+            console.log(ballVelocityX,ballVelocityY);
+
+        }
+        
+    }
+
+    if(ballTop<=sliderTop &&
+        ballBottom>=sliderBottom 
+    ){
+        if(ballLeft<=sliderRight && ballRight>=sliderRight){
+            ballVelocityX*=-1;
+        }else if(ballRight>=sliderLeft && ballLeft<=sliderLeft){
+            ballVelocityX*=-1;
+        }
+        
     }
 
 }
@@ -152,6 +182,7 @@ function scoreTrack(){
         restartBtn.style.display="inline";
         score.innerText=`GAME OVER`
         score.style.color="rgb(241, 100, 100)";
+        // screen.style.display="none";
         clearInterval(physics);
     }
     
